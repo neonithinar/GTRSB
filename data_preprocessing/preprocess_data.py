@@ -1,4 +1,4 @@
-import prepare_directory
+from data_preprocessing import prepare_directory
 import tensorflow as tf
 from tensorflow import keras
 import os
@@ -7,10 +7,15 @@ import os
 img_width = 48
 img_height = 48
 batch_size = 32
-train_dir = 'datasets/GTRSB/GTRSB_final/train'
-val_dir = 'datasets/GTRSB/GTRSB_final/val'
-test_dir = 'datasets/GTRSB/GTRSB_final/test'
-AUTOTUNE = tf.data.AUTOTUNE
+data_dir = os.path.join("datasets/GTSRB/Final_Training/Images")
+annotations_dir = os.path.join('datasets/GTSRB/annotations')
+output_dir = 'datasets/GTSRB/GTSRB_final'
+
+
+train_dir = 'datasets/GTSRB/GTSRB_final/train'
+val_dir = 'datasets/GTSRB/GTSRB_final/val'
+test_dir = 'datasets/GTSRB/GTSRB_final/test'
+AUTOTUNE = tf.data.experimental.AUTOTUNE
 
 def Create_batch_ds(ds_path, large_ds = False):
     """
@@ -36,16 +41,18 @@ def Get_datasets():
     returns train_ds, val_ds & test_ds (tensorflow BatchDatasets
     """
     if os.path.exists(test_dir):
+        print("Dataset directory found, creating datasets")
         train_ds = Create_batch_ds(train_dir)
         val_ds = Create_batch_ds(val_dir)
         test_ds = Create_batch_ds(test_dir)
 
     else:
+        print("Dataset directory NOT found, creating dataset dirs")
         prepare_directory.Rename_dirs(data_dir)
         prepare_directory.Convert_files(data_dir, annotations_dir)
-        train_path, val_path, test_path = prepare_directory.Create_data_dirs(data_dir, ouput_dir,
+        train_path, val_path, test_path = prepare_directory.Create_data_dirs(data_dir, output_dir,
                                                                              split_ratio= (0.8, 0.1, 0.1))
-
+        print("creating datasets")
         train_ds = Create_batch_ds(train_path)
         val_ds = Create_batch_ds(val_path)
         test_ds = Create_batch_ds(test_path)

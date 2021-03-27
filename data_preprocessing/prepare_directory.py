@@ -1,5 +1,6 @@
 import os
 import splitfolders
+import cv2
 
 name_dict = {"00000": "00_speed_limit_20kmph",
              "00001": "01_speed_limit_30_kmph",
@@ -59,11 +60,14 @@ def Rename_dirs(data_dir):
     for root, dirs, files in os.walk(data_dir, topdown=False):
         dirs = sorted(dirs)
         for dir_name in dirs:
-            # print(root +"/"+ name) # for future logging
-            # print(name_dict[str(name)])
-            rename_dir = root + "/" + dir_name
-            final_name = root + "/" + name_dict[str(dir_name)]
-            os.rename(rename_dir, final_name)
+            if dir_name not in name_dict.values():
+                # print(root +"/"+ name) # for future logging
+                # print(name_dict[str(name)])
+                rename_dir = root + "/" + dir_name
+                final_name = root + "/" + name_dict[str(dir_name)]
+                os.rename(rename_dir, final_name)
+            else:
+                print('folder already exists')
 
     return print("Folders Renamed")
 
@@ -82,25 +86,30 @@ def Convert_files(data_dir, annotations_dir):
     for root, dirs, files in os.walk(data_dir, topdown=False):
         dirs = sorted(dirs)
         for dir_name in dirs:
+
             for dir_root, _, sub_dir_files in os.walk(os.path.join(root + "/" + dir_name)):
                 sub_dir_files = sorted(sub_dir_files)
                 for filename in sub_dir_files:
-                    rename_file = dir_root + "/" + filename
-                    new_name = dir_root + "/" + "prefix_" + filename
-                    _, ext = os.path.splitext(filename)
-                    if ext == ".ppm":
-                        os.rename(rename_file, new_name)
-                        i = cv2.imread(new_name)
-                        cv2.imwrite((new_name.strip(".ppm") + ".jpg"), i)
-                    else:
-                        new_file = annotations_dir + '/' + 'prefix_' + filename
-                        os.replace(rename_file, new_file)
-                        os.remove(rename_file)
+                    if 'prefix' not in filename.split('_'):
+                        rename_file = dir_root + "/" + filename
+                        new_name = dir_root + "/" + "prefix_" + filename
+                        _, ext = os.path.splitext(filename)
+                        if ext == ".ppm":
+                            os.rename(rename_file, new_name)
+                            i = cv2.imread(new_name)
+                            cv2.imwrite((new_name.strip(".ppm") + ".jpg"), i)
+                            print("files converted")
+                        else:
+                            os.rename(rename_file, new_name)
+                            new_file = annotations_dir + '/' + 'prefix_' + filename
+                            os.replace(new_name, new_file)
+                            # os.remove(rename_file)
+
 
     return print("All files have been converted, Renamed and moved succesfully")
 
 
-def Create_data_dirs(data_dir, ouput_dir, split_ratio= (0.8, 0.1, 0.1)):
+def Create_data_dirs(data_dir, output_dir, split_ratio= (0.8, 0.1, 0.1)):
     """
     Creates train_dir, val_dir, test_dir folders with shuffled data from data_dir
     according to split_ratio arg
@@ -114,22 +123,22 @@ def Create_data_dirs(data_dir, ouput_dir, split_ratio= (0.8, 0.1, 0.1)):
         tuple (train_path, validation_path, test_path)
     """
 
-    if os.path.exists(ouput_dir):
-        os.makedirs(ouput_dir + '/train')
-        os.makedirs(ouput_dir + '/test')
-        os.makedirs(ouput_dir + '/val')
+    if os.path.exists(output_dir):
+        os.makedirs(output_dir + '/train')
+        os.makedirs(output_dir + '/test')
+        os.makedirs(output_dir + '/val')
         splitfolders.ratio(data_dir, output=output_folder, seed=42, ratio=(0.8, 0.1, 0.1))
 
     else:
-        os.makedirs(ouput_dir)
-        os.makedirs(ouput_dir + '/train')
-        os.makedirs(ouput_dir + '/test')
-        os.makedirs(ouput_dir + '/val')
-        splitfolders.ratio(data_dir, output=output_folder, seed=42, ratio=split_ratio)
+        os.makedirs(output_dir)
+        os.makedirs(output_dir + '/train')
+        os.makedirs(output_dir + '/test')
+        os.makedirs(output_dir + '/val')
+        splitfolders.ratio(data_dir, output=output_dir, seed=42, ratio=split_ratio)
 
-    train_dir_path = os.path.join(ouput_dir + '/train')
-    val_dir_path = os.path.join(ouput_dir + '/val')
-    test_dir_path = os.path.join(ouput_dir + '/test')
+    train_dir_path = os.path.join(output_dir + '/train')
+    val_dir_path = os.path.join(output_dir + '/val')
+    test_dir_path = os.path.join(output_dir + '/test')
 
     return train_dir_path, val_dir_path, test_dir_path
 

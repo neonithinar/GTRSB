@@ -4,6 +4,7 @@
 datasets/GTRSB/
 /home/nithin/PycharmProjects/GTRSB/datasets/GTSRB/
 
+/home/nithin/PycharmProjects/GTRSB/datasets/GTSRB/**
 *.ppm
 
 datasets/GTRSB/**
@@ -11,4 +12,8 @@ datasets/GTRSB/**
 __pycache__/**
 *.idea/
 *.idea/**
+
+.datasets/GTRSB/**
+.datasets/GTRSB/GTSRB_final/**
+./home/nithin/PycharmProjects/GTRSB/datasets/GTSRB_final/**
 

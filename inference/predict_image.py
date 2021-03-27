@@ -1,9 +1,11 @@
 import tensorflow as tf
 from tensorflow import keras
 import numpy as np
+import pandas as pd
 import os
-import train_model
-import pickle
+from training_and_execution import train_model
+from data_preprocessing import preprocess_data
+
 
 def Load_model(model_path):
     """
@@ -20,16 +22,14 @@ def Load_model(model_path):
     print("Loading model")
     if os.path.exists(model_path):
         model = keras.models.load_model(model_path)
-        with open('models/history.pkl.pkl', 'rb') as f:
-            history = pickle.load(f)
+        history = pd.read_csv('models/history.csv')
 
     else:
         print('no model found, preprocessing data and training model')
         train_ds, val_ds, _ = preprocess_data.Get_datasets()
         train_model.Train(train_ds, val_ds)
         model = keras.models.load_model(model_path)
-        with open('models/history.pkl.pkl', 'rb') as f:
-            history = pickle.load(f)
+        history = pd.read_csv('models/history.csv')
 
     return model, history
 
@@ -42,4 +42,4 @@ def evaluate_model(model):
 
     """
     _, _, test_ds = preprocess_data.Get_datasets()
-    return print(model.evaluate(test_set))
+    return print(model.evaluate(test_ds))

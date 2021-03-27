@@ -1,9 +1,12 @@
 import tensorflow as tf
 import numpy as np
+import pandas as pd
 from tensorflow import keras
-import pickle
 
 
+img_width = 48
+img_height = 48
+batch_size = 32
 
 def SE_block(tensor, ratio = 16):
     """
@@ -96,11 +99,14 @@ def Train(train_ds, val_ds):
     model = Build_model()
     early_stopping_cb = keras.callbacks.EarlyStopping(patience=5, restore_best_weights=True)
     model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-    history = model.fit(train_ds, validation_data=val_ds, callbacks=[early_stopping_cb], epochs=50)
+    history = model.fit(train_ds, validation_data=val_ds, callbacks=[early_stopping_cb], epochs=2)
     model.save('models/CNN_SE_model.h5')
-    file_to_write = open("models/history.pkl", "wb")
-    pickle.dump(history, file_to_write)
-
+    print('model saved')
+    history_df = pd.DataFrame(history.history)
+    hist_csv_file = 'models/history.csv'
+    with open(hist_csv_file, mode='w') as f:
+        history_df.to_csv(f)
+    print('history saved')
     return print("model trained successfully")
 
 
