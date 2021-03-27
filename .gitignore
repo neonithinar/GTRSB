@@ -13,7 +13,8 @@ __pycache__/**
 *.idea/
 *.idea/**
 
-.datasets/GTRSB/**
-.datasets/GTRSB/GTSRB_final/**
-./home/nithin/PycharmProjects/GTRSB/datasets/GTSRB_final/**
+datasets/GTRSB/**
+datasets/GTRSB/GTSRB_final/**
+/home/nithin/PycharmProjects/GTRSB/datasets/GTSRB_final/**
 
+*.csv
