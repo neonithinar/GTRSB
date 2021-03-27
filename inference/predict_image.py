@@ -2,7 +2,8 @@ import tensorflow as tf
 from tensorflow import keras
 import numpy as np
 import os
-
+import train_model
+import pickle
 
 def Load_model(model_path):
     """
@@ -19,9 +20,24 @@ def Load_model(model_path):
     print("Loading model")
     if os.path.exists(model_path):
         model = keras.models.load_model(model_path)
+        with open('models/history.pkl.pkl', 'rb') as f:
+            history = pickle.load(f)
 
     else:
         print('no model found')
-        
+        train_model.Train()
+        model = keras.models.load_model(model_path)
+        with open('models/history.pkl.pkl', 'rb') as f:
+            history = pickle.load(f)
+
+    return model, history
 
 # TODO: create inference function with model.predict
+
+
+def evaluate_model(model, test_set):
+    """
+    Evaluates the model against a given test_set
+
+    """
+    return print(model.evaluate(test_set))

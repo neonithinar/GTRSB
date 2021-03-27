@@ -1,6 +1,8 @@
 import tensorflow as tf
 import numpy as np
 from tensorflow import keras
+import pickle
+
 
 
 def SE_block(tensor, ratio = 16):
@@ -80,7 +82,7 @@ def Build_model():
 
 
 
-def Train(summary=True, plot_model= True):
+def Train():
     """
     Trains a CNN model with squeeze and excitation blocks and saves it
     args:
@@ -95,22 +97,10 @@ def Train(summary=True, plot_model= True):
     early_stopping_cb = keras.callbacks.EarlyStopping(patience=5, restore_best_weights=True)
     model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
     history = model.fit(train_ds, validation_data=val_ds, callbacks=[early_stopping_cb], epochs=50)
+    model.save('models/CNN_SE_model.h5')
+    file_to_write = open("models/history.pkl", "wb")
+    pickle.dump(history, file_to_write)
 
-    return history
+    return print("model trained successfully")
 
 
-def plot_model_summary(model):
-    "Plots model summary"
-    print(model.summary())
-
-def plot_model_diagram(model, save= True):
-    """
-    plot model summary diagram
-    args:
-        model: compiled model
-        save: True if model diagram is to be saved as a png else False
-    """
-    if save:
-        keras.utils.plot_model(model, to_file= 'images/CNN_SE_model.png')
-    else:
-        keras.utils.plot_model(model)
