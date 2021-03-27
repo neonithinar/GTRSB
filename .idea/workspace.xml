@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="bf135f25-2503-434a-b27c-3c37f9313c64" name="Default Changelist" comment="added main.py file test commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_preprocessing/prepare_directory.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_preprocessing/prepare_directory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_preprocessing/preprocess_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_preprocessing/preprocess_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inference/plot_figures.py" beforeDir="false" afterPath="$PROJECT_DIR$/inference/plot_figures.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inference/predict_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/inference/predict_image.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/training_and_execution/train_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/training_and_execution/train_model.py" afterDir="false" />
@@ -47,17 +50,17 @@
   </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <module name="GTRSB" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="$USER_HOME$/miniconda3/envs/Deep_learning/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />

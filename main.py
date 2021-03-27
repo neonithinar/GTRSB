@@ -23,8 +23,8 @@ batch_size = 32
 
 def main():
 
-
     model, history = predict_image.Load_model(model_path)
+    test_ds = preprocess_data.Get_test_ds() # TODO create this function
     predict_image.evaluate_model(model, test_ds)
 
 

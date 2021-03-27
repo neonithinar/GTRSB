@@ -125,10 +125,11 @@ def Create_data_dirs(data_dir, ouput_dir, split_ratio= (0.8, 0.1, 0.1)):
         os.makedirs(ouput_dir + '/train')
         os.makedirs(ouput_dir + '/test')
         os.makedirs(ouput_dir + '/val')
-        splitfolders.ratio(data_dir, output=output_folder, seed=42, ratio=(0.8, 0.1, 0.1))
+        splitfolders.ratio(data_dir, output=output_folder, seed=42, ratio=split_ratio)
 
-    train_dir = os.path.join(ouput_dir + '/train')
-    val_dir = os.path.join(ouput_dir + '/val')
-    test_dir = os.path.join(ouput_dir + '/test')
+    train_dir_path = os.path.join(ouput_dir + '/train')
+    val_dir_path = os.path.join(ouput_dir + '/val')
+    test_dir_path = os.path.join(ouput_dir + '/test')
 
-    return train_dir, val_dir, test_dir
+    return train_dir_path, val_dir_path, test_dir_path
+

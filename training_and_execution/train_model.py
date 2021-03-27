@@ -82,7 +82,7 @@ def Build_model():
 
 
 
-def Train():
+def Train(train_ds, val_ds):
     """
     Trains a CNN model with squeeze and excitation blocks and saves it
     args:

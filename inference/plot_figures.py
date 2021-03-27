@@ -5,11 +5,11 @@ import matplotlib.pyplot as plt
 
 
 
-def plot_model_summary(model):
+def Plot_model_summary(model):
     "Plots model summary"
     print(model.summary())
 
-def plot_model_diagram(model, save= True):
+def Plot_model_diagram(model, save= True):
     """
     plot model summary diagram
     args:
@@ -21,7 +21,7 @@ def plot_model_diagram(model, save= True):
     else:
         keras.utils.plot_model(model)
 
-def plot_learning_curves(history, save_figure = True):
+def Plot_learning_curves(history, save_figure = True):
     """
     plot loss curves: train loss & val loss against epochs
     plot accuracy curves: train and val accureacy against epochs
@@ -29,3 +29,4 @@ def plot_learning_curves(history, save_figure = True):
         history: model.fit data
         save_figure: Boolean
     """
+    pass
