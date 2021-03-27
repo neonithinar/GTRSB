@@ -100,5 +100,35 @@ def Convert_files(data_dir, annotations_dir):
     return print("All files have been converted, Renamed and moved succesfully")
 
 
-def Create_data_dirs():
-    pass
+def Create_data_dirs(data_dir, ouput_dir, split_ratio= (0.8, 0.1, 0.1)):
+    """
+    Creates train_dir, val_dir, test_dir folders with shuffled data from data_dir
+    according to split_ratio arg
+
+    args:
+        data_dir: source directory containing image file data
+        ouput_dir: destination dir. if the path doesn't exist, it will be created automatically
+        split_ratio: train:val:test split ratio
+
+    returns:
+        tuple (train_path, validation_path, test_path)
+    """
+
+    if os.path.exists(ouput_dir):
+        os.makedirs(ouput_dir + '/train')
+        os.makedirs(ouput_dir + '/test')
+        os.makedirs(ouput_dir + '/val')
+        splitfolders.ratio(data_dir, output=output_folder, seed=42, ratio=(0.8, 0.1, 0.1))
+
+    else:
+        os.makedirs(ouput_dir)
+        os.makedirs(ouput_dir + '/train')
+        os.makedirs(ouput_dir + '/test')
+        os.makedirs(ouput_dir + '/val')
+        splitfolders.ratio(data_dir, output=output_folder, seed=42, ratio=(0.8, 0.1, 0.1))
+
+    train_dir = os.path.join(ouput_dir + '/train')
+    val_dir = os.path.join(ouput_dir + '/val')
+    test_dir = os.path.join(ouput_dir + '/test')
+
+    return train_dir, val_dir, test_dir

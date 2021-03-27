@@ -8,7 +8,7 @@ dataset_dir_filelist = os.listdir(dataset_dir)
 GTRSB_url = 'https://sid.erda.dk/public/archives/daaeac0d7ce1152aea9b61d9f1e19370/GTSRB_Final_Training_Images.zip'
 download_file = current_dir+'/GTSRB_Final_Training_Images.zip'
 
-if 'GTRSB' not in dataset_dir_filelist:
+if 'GTSRB' not in dataset_dir_filelist:
     if os.path.exists(download_file):
 
         with ZipFile(download_file, 'r') as zip_ref:

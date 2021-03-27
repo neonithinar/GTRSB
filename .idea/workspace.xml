@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bf135f25-2503-434a-b27c-3c37f9313c64" name="Default Changelist" comment="added main.py file test commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_preprocessing/prepare_directory.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_preprocessing/prepare_directory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +31,9 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1qI2cTY6RFSsXoNpYgq22tWNh3N" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
