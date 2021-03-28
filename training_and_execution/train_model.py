@@ -79,7 +79,8 @@ def Build_model():
     Dense_2 = keras.layers.Dense(86, activation='relu')(dropout_4)
     BN_4 = keras.layers.BatchNormalization()(Dense_2)
     dropout_5 = keras.layers.Dropout(0.5)(BN_4)
-    output = keras.layers.Dense(43, activation='softmax')(dropout_5)
+    final_dense = keras.layers.Dense(43, name='top_dense')(dropout_5)
+    output = keras.layers.Softmax()(final_dense)
 
     return keras.models.Model(inputs=[input], outputs=[output])
 
@@ -99,7 +100,7 @@ def Train(train_ds, val_ds):
     model = Build_model()
     early_stopping_cb = keras.callbacks.EarlyStopping(patience=5, restore_best_weights=True)
     model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-    history = model.fit(train_ds, validation_data=val_ds, callbacks=[early_stopping_cb], epochs=2)
+    history = model.fit(train_ds, validation_data=val_ds, callbacks=[early_stopping_cb], epochs=50)
     model.save('models/CNN_SE_model.h5')
     print('model saved')
     history_df = pd.DataFrame(history.history)
