@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bf135f25-2503-434a-b27c-3c37f9313c64" name="Default Changelist" comment="made everthing work until model.evaluate">
+    <list default="true" id="bf135f25-2503-434a-b27c-3c37f9313c64" name="Default Changelist" comment="modified .gitignore to ignore .csv files">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00000/GT-00000.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00001/GT-00001.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00002/GT-00002.csv" beforeDir="false" />
@@ -45,6 +46,10 @@
       <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00040/GT-00040.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00041/GT-00041.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00042/GT-00042.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inference/plot_figures.py" beforeDir="false" afterPath="$PROJECT_DIR$/inference/plot_figures.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inference/predict_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/inference/evaluation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_and_execution/train_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/training_and_execution/train_model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616871499083</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="modified .gitignore to ignore .csv files">
+      <created>1616871639944</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1616871639944</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -148,6 +160,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added main.py file test commit" />
     <MESSAGE value="made everthing work until model.evaluate" />
-    <option name="LAST_COMMIT_MESSAGE" value="made everthing work until model.evaluate" />
+    <MESSAGE value="modified .gitignore to ignore .csv files" />
+    <option name="LAST_COMMIT_MESSAGE" value="modified .gitignore to ignore .csv files" />
   </component>
 </project>

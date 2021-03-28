@@ -36,7 +36,7 @@ def Load_model(model_path):
 # TODO: create inference function with model.predict
 
 
-def evaluate_model(model):
+def Evaluate_model(model):
     """
     Evaluates the model against a given test_set
 
