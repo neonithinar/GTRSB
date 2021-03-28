@@ -41,5 +41,6 @@ def Evaluate_model(model):
     Evaluates the model against a given test_set
 
     """
+    print("Evaluating test set")
     _, _, test_ds = preprocess_data.Get_datasets()
     return print(model.evaluate(test_ds))

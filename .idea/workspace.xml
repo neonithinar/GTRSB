@@ -1,50 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bf135f25-2503-434a-b27c-3c37f9313c64" name="Default Changelist" comment="modified image prediction functions">
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00000/GT-00000.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00001/GT-00001.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00002/GT-00002.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00003/GT-00003.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00004/GT-00004.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00005/GT-00005.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00006/GT-00006.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00007/GT-00007.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00008/GT-00008.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00009/GT-00009.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00010/GT-00010.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00011/GT-00011.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00012/GT-00012.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00013/GT-00013.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00014/GT-00014.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00015/GT-00015.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00016/GT-00016.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00017/GT-00017.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00018/GT-00018.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00019/GT-00019.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00020/GT-00020.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00021/GT-00021.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00022/GT-00022.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00023/GT-00023.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00024/GT-00024.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00025/GT-00025.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00026/GT-00026.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00027/GT-00027.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00028/GT-00028.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00029/GT-00029.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00030/GT-00030.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00031/GT-00031.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00032/GT-00032.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00033/GT-00033.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00034/GT-00034.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00035/GT-00035.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00036/GT-00036.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00037/GT-00037.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00038/GT-00038.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00039/GT-00039.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00040/GT-00040.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00041/GT-00041.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/GTSRB/Final_Training/Images/00042/GT-00042.csv" beforeDir="false" />
+    <list default="true" id="bf135f25-2503-434a-b27c-3c37f9313c64" name="Default Changelist" comment="modified training layers">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_preprocessing/prepare_directory.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_preprocessing/prepare_directory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_preprocessing/preprocess_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_preprocessing/preprocess_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inference/evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/inference/evaluation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inference/plot_figures.py" beforeDir="false" afterPath="$PROJECT_DIR$/inference/plot_figures.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/training_and_execution/train_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/training_and_execution/train_model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,9 +46,30 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.configs">
+    <configuration name="configs" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/miniconda3/envs/Deep_learning/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/configurations" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/configurations/configs.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -107,6 +91,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.configs" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -145,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616921947019</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="modified training layers">
+      <created>1616922505246</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1616922505246</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -165,6 +161,7 @@
     <MESSAGE value="made everthing work until model.evaluate" />
     <MESSAGE value="modified .gitignore to ignore .csv files" />
     <MESSAGE value="modified image prediction functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="modified image prediction functions" />
+    <MESSAGE value="modified training layers" />
+    <option name="LAST_COMMIT_MESSAGE" value="modified training layers" />
   </component>
 </project>

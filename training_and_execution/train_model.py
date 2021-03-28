@@ -2,11 +2,10 @@ import tensorflow as tf
 import numpy as np
 import pandas as pd
 from tensorflow import keras
+from configurations.configs import Configurations
 
+Configs = Configurations()
 
-img_width = 48
-img_height = 48
-batch_size = 32
 
 def SE_block(tensor, ratio = 16):
     """
@@ -40,7 +39,7 @@ def Build_model():
     np.random.seed(42)
 
     # input = keras.layers.experimental.preprocessing.Rescaling(1./255, input_shape= (img_height, img_width, 3))
-    input = keras.layers.Input(shape=(img_height, img_width, 3))
+    input = keras.layers.Input(shape=(Configs.img_height, Configs.img_width, 3))
     # print(input.shape)
     rescale = keras.layers.experimental.preprocessing.Rescaling(1. / 255)(input)
     # print(rescale.shape)
