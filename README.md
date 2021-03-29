@@ -57,5 +57,3 @@ All training and model parameters are listed in the *configurations/configs.py* 
 * Hu, Jie, Li Shen, and Gang Sun. "Squeeze-and-excitation networks." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 7132-7141. 2018.
 
 
-
-I would very much like to extend my gratitude to user _@BobVonBob_ in discord (code bullet and co server, Machine Learning Channel) for suggesting the use of bigram frequencies to identify language. Which later led me to read The paper on N-gram based Text recognition (William B. Cavnar et.al) and other useful literatures
