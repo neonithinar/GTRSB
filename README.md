@@ -1,9 +1,9 @@
 
 ![Banner](https://github.com/neonithinar/GTRSB/blob/main/images/Banner.png)
 <!-- retro visitor counter -->
-<p align="center"> 
+<!-- <p align="center"> 
   <img src="https://profile-counter.glitch.me/{neonithinar}/count.svg" />
-</p>
+</p> -->
 
 <!-- Welcome Message -->
 <h1>GTSRB CNN classifier with custom Squeeze and Excitation Block</h1>
@@ -22,7 +22,7 @@
 	* pandas
 	* matplotlib
 	* opencv
-	* **[splitfolders](https://files.pythonhosted.org/packages/b8/5f/3c2b2f7ea5e047c8cdc3bb00ae582c5438fcdbbedcc23b3cc1c2c7aae642/split_folders-0.4.3-py3-none-any.whl)**  (pip install splitfolders)
+	* **[splitfolders](https://files.pythonhosted.org/packages/b8/5f/3c2b2f7ea5e047c8cdc3bb00ae582c5438fcdbbedcc23b3cc1c2c7aae642/split_folders-0.4.3-py3-none-any.whl)**  ($ pip install splitfolders)
 
 
 
