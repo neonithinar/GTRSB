@@ -19,7 +19,7 @@ def main():
     Plot_model_summary(model)
     # Plot_model_diagram(model, save= True)
     Plot_learning_curves(history)
-    Predict_image(test_image_path, model, show_img = True)
+    Predict_image(Configs.test_image_path, model, show_img = True)
 
 
 

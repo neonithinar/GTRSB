@@ -43,9 +43,10 @@ def Plot_learning_curves(history, save_figure = True):
     pd.DataFrame(history).plot(figsize = (8, 5))
     plt.grid(True)
     plt.gca().set_ylim(0, 1) # set the vertical range to [0-1]
-    plt.show()
     if save_figure:
         save_fig(fig_id="Learning_curves")
+    plt.show()
+
 
 def Preproces_image(image_path):
     test_image = keras.preprocessing.image.load_img(image_path, target_size=(Configs.img_height, Configs.img_width))

@@ -45,15 +45,10 @@ def Build_model():
     # print(rescale.shape)
     conv1_1 = keras.layers.Conv2D(32, kernel_size=(3, 3),
                                   padding='same', activation='relu')(rescale)
-    # print(conv1_1.shape)
     conv1_2 = keras.layers.Conv2D(32, kernel_size=(3, 3),
                                   padding='same', activation='relu')(conv1_1)
     maxpool_1 = keras.layers.MaxPooling2D(pool_size=(2, 2))(conv1_2)
-    # BN_1 = keras.layers.BatchNormalization()(maxpool_1)
-    # dropout_1 = keras.layers.Dropout(0.2)(BN_1)
-    # print(dir(maxpool_1))
-    # print(maxpool_1.shape)
-    se_block_1 = SE_block(maxpool_1)  # (dropout_1)
+    se_block_1 = SE_block(maxpool_1)
 
     conv2_1 = keras.layers.Conv2D(64, kernel_size=(3, 3),
                                   padding='same', activation='relu')(se_block_1)

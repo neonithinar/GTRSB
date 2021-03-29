@@ -5,8 +5,10 @@ from configurations.configs import Configurations
 import os
 
 Configs = Configurations()
-
-AUTOTUNE = tf.data.experimental.AUTOTUNE
+if tf.__version__ == '2.3.0':
+    AUTOTUNE = tf.data.experimental.AUTOTUNE
+elif tf.__version__ == '2.4.1':
+    AUTOTUNE = tf.data.AUTOTUNE
 
 def Create_batch_ds(ds_path, large_ds = False):
     """
@@ -15,7 +17,9 @@ def Create_batch_ds(ds_path, large_ds = False):
         ds_path: path to dir
         large_ds (Boolean): if True, disables cache(), else enables caching of ds after each epoch
     """
-    ds = keras.preprocessing.image_dataset_from_directory(ds_path, seed=42, image_size=(Configs.img_height, Configs.img_width),
+    ds = keras.preprocessing.image_dataset_from_directory(ds_path,
+                                                          seed=42, image_size=(Configs.img_height,
+                                                                               Configs.img_width),
                                                           batch_size=Configs.batch_size)
     if large_ds:
         ds = ds.prefetch(buffer_size=AUTOTUNE)
