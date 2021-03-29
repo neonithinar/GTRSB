@@ -156,8 +156,8 @@ class Configurations():
                        "00035_ahead_only", "00036_go_straight_or_right", "00037_go_straight_or_left",
                        "00038_keep_right", "00039_keep_left", "00040_roundabout_mandatory", "00041_end_of_passing",
                        "00042_end_of_no_passing_by"]
-    def IMAGE_HEIGHT(self):
-        return self.image_height
+
+
 
 
 

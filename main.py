@@ -26,7 +26,8 @@ def main():
     Evaluate_model(model)
     print("Plotting model summary and model diagram")
     Plot_model_summary(model)
-    Plot_model_diagram(model, save= True)
+    # Plot_model_diagram(model, save= True) # model diagram not supported in tf.__version__ 2.3.0
+    # but supported in version 2.4.1
     print("plotting learining curves")
     Plot_learning_curves(history)
     print("INFERENCE: TRYING TO PREDICT AN UNKNOWN TRAFFIC IMAGE FROM WEB \n "

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bf135f25-2503-434a-b27c-3c37f9313c64" name="Default Changelist" comment="modified main and dependent files to accept user inputs">
+    <list default="true" id="bf135f25-2503-434a-b27c-3c37f9313c64" name="Default Changelist" comment="alignment rectified">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inference/plot_figures.py" beforeDir="false" afterPath="$PROJECT_DIR$/inference/plot_figures.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configurations/configs.py" beforeDir="false" afterPath="$PROJECT_DIR$/configurations/configs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617008384560</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="alignment rectified">
+      <created>1617010292276</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1617010292276</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -181,6 +190,7 @@
     <MESSAGE value="Added Configurations File. Modified files accordingly" />
     <MESSAGE value="Modified model files and plot file" />
     <MESSAGE value="modified main and dependent files to accept user inputs" />
-    <option name="LAST_COMMIT_MESSAGE" value="modified main and dependent files to accept user inputs" />
+    <MESSAGE value="alignment rectified" />
+    <option name="LAST_COMMIT_MESSAGE" value="alignment rectified" />
   </component>
 </project>
