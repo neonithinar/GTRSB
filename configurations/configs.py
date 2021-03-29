@@ -9,7 +9,7 @@ img_height = 48
 batch_size = 32
 data_dir = "datasets/GTSRB/Final_Training/Images"
 annotations_dir = "datasets/GTSRB/annotations"
-output_dir = "Datasets/GTRSB/GTRSB_final"
+output_dir = "datasets/GTRSB/GTRSB_final"
 train_dir = "datasets/GTSRB/GTSRB_final/train"
 val_dir = "datasets/GTSRB/GTSRB_final/val"
 test_dir = "datasets/GTSRB/GTSRB_final/test"
@@ -88,7 +88,7 @@ class Configurations():
         self.batch_size = 32
         self.data_dir = "datasets/GTSRB/Final_Training/Images"
         self.annotations_dir = "datasets/GTSRB/annotations"
-        self.output_dir = "Datasets/GTRSB/GTRSB_final"
+        self.output_dir = "datasets/GTRSB/GTRSB_final"
         self.train_dir = "datasets/GTSRB/GTSRB_final/train"
         self.val_dir = "datasets/GTSRB/GTSRB_final/val"
         self.test_dir = "datasets/GTSRB/GTSRB_final/test"
