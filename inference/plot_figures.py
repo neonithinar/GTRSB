@@ -40,12 +40,28 @@ def Plot_learning_curves(history, save_figure = True):
         history: model.fit data
         save_figure: Boolean
     """
-    pd.DataFrame(history).plot(figsize = (8, 5))
-    plt.grid(True)
-    plt.gca().set_ylim(0, 1) # set the vertical range to [0-1]
+    # summarize history for loss
+    plt.plot(history['accuracy'])
+    plt.plot(history['val_accuracy'])
+    plt.title('model accuracy')
+    plt.ylabel('accuracy')
+    plt.xlabel('epoch')
+    plt.legend(['train', 'test'], loc='upper left')
     if save_figure:
-        save_fig(fig_id="Learning_curves")
+        save_fig(fig_id="model accuracy")
     plt.show()
+    # summarize history for loss
+    plt.plot(history['loss'])
+    plt.plot(history['val_loss'])
+    plt.title('model loss')
+    plt.ylabel('loss')
+    plt.xlabel('epoch')
+    plt.legend(['train', 'test'], loc='upper left')
+    if save_figure:
+        save_fig(fig_id="model loss")
+    plt.show()
+
+
 
 
 def Preproces_image(image_path):

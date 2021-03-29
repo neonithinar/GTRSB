@@ -2,10 +2,14 @@ import tensorflow as tf
 import numpy as np
 import pandas as pd
 from tensorflow import keras
+import datetime
 from configurations.configs import Configurations
+from data_preprocessing import preprocess_data
 
 Configs = Configurations()
+now = datetime.datetime.now()
 
+dt_string = now.strftime("%d_%m_%H_%M_%S")
 
 def SE_block(tensor, ratio = 16):
     """
@@ -16,7 +20,7 @@ def SE_block(tensor, ratio = 16):
         ratio: reduction ratio, default value = 16 as suggested by paper for RESNET50
     """
     input_tensor = tensor
-    # ch_axis = 1 if keras.backend.image_data_format() == 'channel_first' else -1
+
     num_filters = getattr(input_tensor, 'shape')[-1]
     se_block_shape = (1, 1, num_filters)
 
@@ -57,17 +61,18 @@ def Build_model():
     maxpool_2 = keras.layers.MaxPooling2D(pool_size=(2, 2))(conv2_2)
     BN_2 = keras.layers.BatchNormalization()(maxpool_2)
     dropout_2 = keras.layers.Dropout(0.2)(BN_2)
+    se_block_2 = SE_block(dropout_2)
 
     conv3_1 = keras.layers.Conv2D(128, kernel_size=(3, 3),
-                                  padding='same', activation='relu')(dropout_2)
+                                  padding='same', activation='relu')(se_block_2)
     conv3_2 = keras.layers.Conv2D(128, kernel_size=(3, 3),
                                   padding='same', activation='relu')(conv3_1)
     maxpool_3 = keras.layers.MaxPooling2D(pool_size=(2, 2))(conv3_2)
     BN_3 = keras.layers.BatchNormalization()(maxpool_3)
     dropout_3 = keras.layers.Dropout(0.2)(BN_3)
-    se_block_2 = SE_block(dropout_3)
 
-    Flatten = keras.layers.Flatten()(se_block_2)
+
+    Flatten = keras.layers.Flatten()(dropout_3)
     Dense_1 = keras.layers.Dense(128, activation='relu')(Flatten)
     dropout_4 = keras.layers.Dropout(0.5)(Dense_1)
     Dense_2 = keras.layers.Dense(86, activation='relu')(dropout_4)
@@ -80,7 +85,7 @@ def Build_model():
 
 
 
-def Train(train_ds, val_ds):
+def Train():
     """
     Trains a CNN model with squeeze and excitation blocks and saves it
     args:
@@ -90,15 +95,15 @@ def Train(train_ds, val_ds):
     """
 
     print("training the model")
-
+    train_ds, val_ds, _ = preprocess_data.Get_datasets()
     model = Build_model()
     early_stopping_cb = keras.callbacks.EarlyStopping(patience=5, restore_best_weights=True)
     model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
     history = model.fit(train_ds, validation_data=val_ds, callbacks=[early_stopping_cb], epochs=50)
-    model.save('models/CNN_SE_model.h5')
+    model.save('models/' + now + 'CNN_SE_model.h5')
     print('model saved')
     history_df = pd.DataFrame(history.history)
-    hist_csv_file = 'models/history.csv'
+    hist_csv_file = 'models/' + now + 'history.csv'
     with open(hist_csv_file, mode='w') as f:
         history_df.to_csv(f)
     print('history saved')

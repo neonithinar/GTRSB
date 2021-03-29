@@ -26,14 +26,14 @@ def Load_model(model_path):
 
     else:
         print('no model found, preprocessing data and training model')
-        train_ds, val_ds, _ = preprocess_data.Get_datasets()
-        train_model.Train(train_ds, val_ds)
+        # train_ds, val_ds, _ = preprocess_data.Get_datasets()
+        train_model.Train()
         model = keras.models.load_model(model_path)
         history = pd.read_csv('models/history.csv')
 
     return model, history
 
-# TODO: create inference function with model.predict
+
 
 
 def Evaluate_model(model):
