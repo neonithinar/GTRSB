@@ -65,7 +65,9 @@ def Plot_learning_curves(history, save_figure = True):
 
 
 def Preproces_image(image_path):
-    test_image = keras.preprocessing.image.load_img(image_path, target_size=(Configs.img_height, Configs.img_width))
+    test_image = keras.preprocessing.image.load_img(image_path,
+                                                    target_size=(Configs.img_height,
+                                                                 Configs.img_width))
     image_array = keras.preprocessing.image.img_to_array(test_image)
     img_batch = tf.expand_dims(image_array, axis=0)
 
