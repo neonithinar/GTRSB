@@ -8,42 +8,54 @@
 <!-- Welcome Message -->
 <h1>GTSRB CNN classifier with custom Squeeze and Excitation Block</h1>
 
-<h3>Project files to classify </h3>
+<h3>Project files to classify Traffic signs to 43 diferent classes</h3>
 
 
 
-**How to Use**  
+**How to setup the environment ?**  
 
 * Clone this repo
-* Run _server.py_ from your terminal
-* Copy the url in the output in your browser to run the web app locally
-* Give a language string you need to identify in the input field
-* Check the obtained Result !
+* install the libraries mentioned in the requirements.txt or use a conda env to install the exact env in your system
+* OR install the following libraries manually
+	* tensorflow GPU enabled version for your system
+	* numpy
+	* pandas
+	* matplotlib
+	* opencv
+	* **[splitfolders](https://files.pythonhosted.org/packages/b8/5f/3c2b2f7ea5e047c8cdc3bb00ae582c5438fcdbbedcc23b3cc1c2c7aae642/split_folders-0.4.3-py3-none-any.whl)**  (pip install splitfolders)
 
 
-**How this works ??** <img src="https://media.giphy.com/media/TKXabSgn2ouV8vmTue/giphy.gif" width="40px">
 
-* The string given to the input form is passed on to a pretrained Neural network model (model_1.h5) after cleaning. 
-* The model outputs a set of probabilities from which the most probable language is returned to the web application as the prediction
-* **[Checkout my 5 min discription of the project on youtube here... ! ](https://youtu.be/PBPjTO-yTdQ)**
+**How to Use the project ??** 
 
-**N-gram based Language Detection Model**
+* run main.py in your virtual environment
+* If GTSRB dataset was not found in the dataset folder, the file will automatically download the dataset and continue with the program
+* in the prompt that follows, type "y" if you want to train a fresh model or "n" if you want to use a pretrained network
 
-* An N-gram is an N-character slice of a longer string. Although in the literature the term can include the notion of any co-occurring set of characters in a string (e.g., an N-gram made up of the first and third character of a word), in this
-project we use the term for contiguous slices only. Typically, we will be using <h5>character trigrams<h5> 
-* eg; the word ```TEXT``` will become ```_TE, TEX, EXT, XT_, T_ _``` (begining and end of the word is padded with white space)
-* The idea is to identify *Character Trigrams* unique to each language and use them to classify the languages
-* The model was trained on a subset of [Tatoeba dataset](https://downloads.tatoeba.org/exports/sentences.csv) which contains over 300 languages. 
-* Currently the model is able to identify dutch, finnish, polish, lituanian, czech, swedish, arabic, macedonian, danish, and serbian (10 languages. But will soon be updated to identify more languages)
-* After cleaning the dataset, The most common *Language Trigrams* were extracted from each of the languages, and a vocabulary for each language was created from the training set based on which the whole training, validation and test set were transformed using ```sklearn.CountVectorizer ``` 
-	
-* These extracted features were fed to a simple feedforward Neural network with 3 hidden layers to classify the languages.
-* ```Early stopping``` and ```model checkpoint```  callbacks to prevent overfitting of the model
+* If you select "y" the program will proceed with a fresh trainig of the model and save weights and history of the current model with current timestamp in the models folder.
+
+
+* If you type "n" the model will proceed to evaluate the test set. further more it will also plot the learning curves and make prediction on the test file.
+
+<h4> Making changes <h4>
+
+All training and model parameters are listed in the *configurations/configs.py* file.If you need to change any parameters to the training, you can edit the variables in the Configurations class. 
+
+** Making a custom prediction**
+* To make a custom prediction, move the image to predict into the images folder. copy the image path into test_image_path in the Configurations class within configs.py file.
+* Run the main file to get the prediction of the image
+
+**Model Architecture**
+<p align="center"> 
+  <img src="https://github.com/neonithinar/GTRSB/blob/main/images/CNN_SE_model.png" />
+</p>
 
 
 **References**
 
-* _William B. Cavnar et. al._ , [N-Gram-Based Text Categorization](https://www.researchgate.net/publication/2375544_N-Gram-Based_Text_Categorization) 
-* _A. Simões, J.J. Almeida, and S.D. Byers_, [Language identification: a neural network approach. (2014)](https://www.researchgate.net/publication/290102620_Language_identification_A_neural_network_approach)
+* J. Stallkamp, M. Schlipsing, J. Salmen, and C. Igel. The German Traffic Sign Recognition Benchmark: A multi-class classification    competition. In Proceedings of the IEEE International Joint Conference on Neural Networks, pages 1453–1460. 2011.
+* Hu, Jie, Li Shen, and Gang Sun. "Squeeze-and-excitation networks." In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 7132-7141. 2018.
+
+
 
 I would very much like to extend my gratitude to user _@BobVonBob_ in discord (code bullet and co server, Machine Learning Channel) for suggesting the use of bigram frequencies to identify language. Which later led me to read The paper on N-gram based Text recognition (William B. Cavnar et.al) and other useful literatures
